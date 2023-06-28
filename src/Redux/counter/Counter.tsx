@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { INCREMENT, DECREMENT, TOGGLE } from '../store/reducer';
+import { INCREMENT, DECREMENT, TOGGLE, INCREASE } from '../store/reducer';
 
 const Counter: React.FC = () => {
     const dispatch = useDispatch();
@@ -14,10 +14,14 @@ const Counter: React.FC = () => {
     const decrementHandler = () => {
         dispatch({ type: DECREMENT });
     };
-
-    const toggleHandler = () => {
-        dispatch({ type: TOGGLE });
+    
+    const increaseHandler = () => {
+        dispatch({ type: INCREASE , payload: 10});
     };
+
+    // const toggleHandler = () => {
+    //     dispatch({ type: TOGGLE });
+    // };
 
     return (
         <div>
@@ -25,9 +29,10 @@ const Counter: React.FC = () => {
             {!show && <div className='counter-btn'>{counter}</div>}
             <div>
                 <button className='counter-btn' onClick={incrementHandler}>Increment</button>
+                <button className='counter-btn' onClick={increaseHandler}>Increase by 10</button>
                 <button className='counter-btn' onClick={decrementHandler}>Decrement</button>
             </div>
-            <button className='counter-btn' onClick={toggleHandler}>Toggle</button>
+            {/* <button className='counter-btn' onClick={toggleHandler}>Toggle</button> */}
         </div>
     );
 };
