@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "../toolkit-counter/src/Redux-Toolkit/store", "../toolkit-counter/src/Redux-Toolkit/Toolkit-Counter", "../toolkit-counter/src/Redux-Toolkit/Toolkit-Counter"  ]
 }
